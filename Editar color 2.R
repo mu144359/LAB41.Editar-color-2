@@ -37,4 +37,30 @@ g3 <- ggplot(data = gapminder2007,
                            color = log(pop))) +
   geom_point()
 
+# Ver g3
+g3
+
+# cambiando el color de los puntos según gradiente
+g3 + scale_color_gradient(low="blue", high = "red")
+
+# cambiando el color de los puntos según gradiente asignar punto medio
+g3 + scale_color_gradient2(midpoint = 16,
+                           low="blue",
+                           mid = "white", 
+                           high = "red", 
+                           space="Lab" )
+
+# haciendo histograma en poblacion
+g4 <- ggplot(data = gapminder2007,
+             mapping = aes(x = lifeExp,
+                           fill = ..count..)) +
+  geom_histogram()
+
+# Ver g4
+g4
+
+# cambiando color de barras histograma
+g4 + scale_fill_gradient(low="blue", high = "red")
+
+
 
