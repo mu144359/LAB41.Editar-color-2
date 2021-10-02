@@ -6,7 +6,7 @@
 # Hecho con gusto por Selene Muñoz Ortega (UAEH)
 #V8
 # LABORATORIO - Gráficos en R con ggplot2 para Ciencia de Datos
-# Editando el color de los gráficos (PARTE 1)
+# Editando el color de los gráficos (PARTE 2)
 
 
 #instalando paquete con los datos
