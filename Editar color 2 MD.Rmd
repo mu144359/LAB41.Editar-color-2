@@ -1,0 +1,74 @@
+---
+title: "Editar color 2 MD"
+author: "Selene Muñoz MD"
+date: "2/10/2021"
+output: html_document
+---
+
+Cargar librerías ggplot2 y gapminder
+```{r}
+library(ggplot2)
+library(gapminder)
+```
+
+Cargar datos a entorno
+```{r}
+data("gapminder")
+```
+
+Filtrar por año 2007
+```{r}
+gapminder2007 <- gapminder[gapminder$year == '2007', ]
+```
+
+
+########### PARTE 2  ###############
+
+
+Escala continua (variable continua)
+
+Haciendo gráfica de puntos por poblacion
+```{r}
+g3 <- ggplot(data = gapminder2007,
+             mapping = aes(x = gdpPercap, 
+                           y = lifeExp,
+                           color = log(pop))) +
+  geom_point()
+```
+
+Ver g3
+```{r}
+g3
+```
+
+Cambiando el color de los puntos según gradiente
+```{r}
+g3 + scale_color_gradient(low="blue", high = "red")
+```
+
+Cambiando el color de los puntos según gradiente asignar punto medio
+```{r}
+g3 + scale_color_gradient2(midpoint = 16,
+                           low="blue",
+                           mid = "white", 
+                           high = "red", 
+                           space="Lab" )
+```
+
+Haciendo histograma en población
+```{r}
+g4 <- ggplot(data = gapminder2007,
+             mapping = aes(x = lifeExp,
+                           fill = ..count..)) +
+  geom_histogram()
+```
+
+Ver g4
+```{r}
+g4
+```
+
+Cambiando color de barras histograma
+```{r}
+g4 + scale_fill_gradient(low="blue", high = "red")
+```
